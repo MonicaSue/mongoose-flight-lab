@@ -2,7 +2,11 @@ import { Flight } from '../models/flight.js'
 
 function newFlight(req, res) {
   console.log("GET NEW WORKS!")
+  const newFlight = new Flight()
+  const dt = newFlight.departs
+  const departsDate = dt.toISOString().slice(0, 16)
   res.render('flights/new', {
+    departsDate,
     title: 'Add Flight',
   })
   

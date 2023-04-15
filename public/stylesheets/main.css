@@ -14,7 +14,11 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.39);
+  /* background-image: url('/public/assets/flights-lab.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center; */
   /* Use a system font, if none are available use an available sans-sarif font */
   margin: 0;
   color: #424748;
@@ -60,7 +64,7 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  color: #424748;
+  color: #42474894;
 }
 
 nav > a:visited {
@@ -69,7 +73,7 @@ nav > a:visited {
 
 nav > a:hover {
   color: white;
-  background-color: #424748;
+  background-color: #42474865;
 }
 
 nav > a.active {
