@@ -13,6 +13,11 @@
     <div><%= flight.flightNo %></div>
     <div>Departure</div>
     <div><%= flight.departs %></div>
+    <div>
+      <a href="/flights/<%= flight._id %>/edit">
+        <button>Edit Flight</button>
+      </a>
+    </div>
   </section>
 </main>
 
