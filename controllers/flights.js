@@ -6,8 +6,8 @@ function newFlight(req, res) {
   const dt = newFlight.departs
   const departsDate = dt.toISOString().slice(0, 16)
   res.render('flights/new', {
-    departsDate,
     title: 'Add Flight',
+    departsDate,
   })
   
 }
