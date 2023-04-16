@@ -5,11 +5,11 @@ function newFlight(req, res) {
   const newFlight = new Flight()
   const dt = newFlight.departs
   const departsDate = dt.toISOString().slice(0, 16)
+  console.log(departsDate)
   res.render('flights/new', {
     title: 'Add Flight',
     departsDate,
   })
-  
 }
 
 function create(req, res) {
@@ -32,9 +32,16 @@ function index(req, res) {
   console.log('INDEX WORKS')
   Flight.find({})
   .then(flights => {
+    flights.forEach(flight=> {
+      if (flight.departs < new Date()) {
+        flight.color = 'red'
+        console.log(flight)
+      }
+    })
     res.render('flights/index', {
-    flights: flights,
-    title: 'All Flights'
+    flights: flights.sort((a, b) => a.departs - b.departs),
+    title: 'All Flights',
+    
     })
   })
   .catch(err => {

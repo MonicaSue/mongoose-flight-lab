@@ -12,6 +12,10 @@ table td {
   text-align: center;
 }
 
+.red {
+  color: red;
+}
+
 #list td:nth-child(2),
 #list td:nth-child(3) {
   min-width: 100px;
