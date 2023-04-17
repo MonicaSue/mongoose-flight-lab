@@ -129,7 +129,6 @@ function deleteTicket(req, res) {
   console.log('TICKET DELETE WORKS!')
   Flight.findById(req.params.flightId)
   .then(flight => {
-    console.log(flight)
     const ticket = flight.tickets.id(req.params.ticketId)
     flight.tickets.remove(ticket)
     flight.save()

@@ -8,10 +8,8 @@
     <thead>
       <tr>
         <th>Airline</th>
-        <th>Airport</th>
         <th>Flight Number</th>
         <th>Detail</th>
-        <th>Departure</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -19,10 +17,8 @@
       <% flights.forEach(flight => { %>
         <tr class="<%= flight.color %>">
           <td><%= flight.airline %></td>
-          <td><%= flight.airport %></td>
           <td><%= flight.flightNo %></td>
           <td><a href="/flights/<%= flight._id %>">detail</td></a>
-          <td><%= flight.departs %></td>
           <td>
             <form 
               action="/flights/<%= flight._id %>?_method=DELETE"
