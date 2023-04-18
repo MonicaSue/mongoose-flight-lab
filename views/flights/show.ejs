@@ -5,6 +5,12 @@
 <main>
   <h1><%= title %></h1>
   <section>
+    <div>
+      <a href="/flights/<%= flight._id %>/edit">
+        <button>Edit Flight</button>
+      </a>
+    </div>
+    <div></div>
     <div>Airline</div>
     <div><%= flight.airline %></div>
     <div>Airport</div>
@@ -13,12 +19,25 @@
     <div><%= flight.flightNo %></div>
     <div>Departure</div>
     <div><%= flight.departs.toISOString().slice(0, 10) %></div>
-    <div>
-      <a href="/flights/<%= flight._id %>/edit">
-        <button>Edit Flight</button>
-      </a>
-    </div>
+    <div>Meals:</div>
+    <ul>
+      <% flight.meals.forEach(meal => { %>
+        <li><%= meal.name %></li>
+      <% }) %>
+    </ul>
   </section>
+  <form 
+    id="add-meal"
+    action="/flights/<%= flight._id %>/meals"
+    method="POST"
+  >
+    <select name="mealId">
+      <% meals.forEach(meal => { %>
+        <option value="<%= meal._id %>"><%= meal.name %></option>
+        <% }) %>
+    </select>
+    <button type="submit">Add to Meals</button>
+</form>
   <h2>Tickets</h2>
   <% if (flight.tickets.length) { %>
     <table>
