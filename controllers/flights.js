@@ -40,8 +40,8 @@ function index(req, res) {
       }
     })
     res.render('flights/index', {
-    flights: flights.sort((a, b) => a.departs - b.departs),
-    title: 'All Flights',
+      flights: flights.sort((a, b) => a.departs - b.departs),
+      title: 'All Flights',
     
     })
   })
