@@ -9,7 +9,7 @@
       <tr>
         <th>Airline</th>
         <th>Flight Number</th>
-        <th>Detail</th>
+        <th>Details</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -18,7 +18,7 @@
         <tr class="<%= flight.color %>">
           <td><%= flight.airline %></td>
           <td><%= flight.flightNo %></td>
-          <td><a href="/flights/<%= flight._id %>">Detail</td></a>
+          <td><a href="/flights/<%= flight._id %>">Details</td></a>
           <td>
             <form 
               action="/flights/<%= flight._id %>?_method=DELETE"
