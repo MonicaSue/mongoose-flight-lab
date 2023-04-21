@@ -21,7 +21,7 @@ function create(req, res) {
   Flight.create(req.body)
   .then(flight => {
     console.log(flight)
-    res.redirect(`/flights/${movie._id}`)
+    res.redirect(`/flights/${flight._id}`)
   })
   .catch(err => {
     console.log(err)
